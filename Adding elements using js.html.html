@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action=""> <input type="text" name="first" id="" placeholder="FirstName"> <input type="text" name="last" id=""
+            placeholder="Lastname"> <input type="submit" value="Submit"> </form>
+    <table border="1">
+        <thead>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Abc </td>
+                <td> xyz </td>
+            </tr>
+        </tbody>
+    </table>
+    <script> 
+    var f1 = document.querySelector('form'); 
+    var t1 = document.querySelector('table'); 
+    var t2 = document.querySelector('ul'); 
+    f1.addEventListener('submit', function (e) {
+            e.preventDefault(); 
+            // console.log(f1.first.value); // console.log(f1.last.value); 
+            var j1=`
+            <tr>
+                <td>
+                    ${f1.first.value}
+                </td>
+                <td>
+                    ${f1.last.value}
+                </td>
+            </tr>
+            `;
+    var j2=` < li > ${ f1.first.value }</li >`;
+    t1.innerHTML+=j1;
+    t2.innerHTML+=j2;
+    })
+    </script>
+</body>
+
+</html>
